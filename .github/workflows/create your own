@@ -2,7 +2,7 @@ name: Deploy React App to Pages
 
 on:
   push:
-    branches: ["Gabi"] # Executa quando fazes push para a branch Gabi
+    branches: ["Gabi"]
 
 permissions:
   contents: read
@@ -23,22 +23,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build project
-        run: npm run build
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Se usas Create React App em vez de Vite, muda para './build'
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
