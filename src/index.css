@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: var(--theme-bg);
+  --color-foreground: var(--theme-fg);
+  --color-card: var(--theme-card);
+  --color-card-foreground: var(--theme-card-fg);
+  --color-primary: var(--theme-primary);
+  --color-primary-foreground: var(--theme-primary-fg);
+  --color-secondary: var(--theme-secondary);
+  --color-secondary-foreground: var(--theme-secondary-fg);
+  --color-accent: var(--theme-accent);
+  --color-accent-foreground: var(--theme-accent-fg);
+  --color-border: var(--theme-border);
+  --color-ring: var(--theme-ring);
+  --radius: 0.5rem;
+}
+
+/* Modo Claro (Padrão) */
+:root {
+  --theme-bg: #FFFFFF;
+  --theme-fg: #0f1117;
+  --theme-card: #f8fafc;
+  --theme-card-fg: #0f1117;
+  --theme-primary: #10B981; 
+  --theme-primary-fg: #FFFFFF;
+  --theme-secondary: #3B82F6; 
+  --theme-secondary-fg: #FFFFFF;
+  --theme-accent: #8B5CF6; 
+  --theme-accent-fg: #FFFFFF;
+  --theme-border: #e2e8f0;
+  --theme-ring: #22E39A;
+  --theme-muted-foreground: #64748b; /* Adicionado para textos secundários no modo claro */
+}
+
+/* Modo Escuro */
+.dark {
+  --theme-bg: #0f1117;
+  --theme-fg: #FFFFFF;
+  --theme-card: #1a1d27;
+  --theme-card-fg: #FFFFFF;
+  --theme-primary: #10B981; 
+  --theme-primary-fg: #FFFFFF;
+  --theme-secondary: #3B82F6; 
+  --theme-secondary-fg: #FFFFFF;
+  --theme-accent: #8B5CF6; 
+  --theme-accent-fg: #FFFFFF;
+  --theme-border: #2a2f45;
+  --theme-ring: #22E39A;
+  --theme-muted-foreground: #94a3b8; /* Adicionado para textos secundários no modo escuro */
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2f45 transparent;
+}
+*::-webkit-scrollbar { width: 6px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background-color: #2a2f45; border-radius: 3px; }
+
+body {
+  background-color: var(--theme-bg); /* Corrigido para usar a variável */
+  color: var(--theme-fg); /* Corrigido para usar a variável */
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
