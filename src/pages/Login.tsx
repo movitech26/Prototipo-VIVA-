@@ -60,8 +60,11 @@ export default function Login() {
         }}>
           <div style={{ textAlign: 'center', marginBottom: '36px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {/* Ícone corrigido */}
-            <img src="/logovivasemfundo.png" alt="Símbolo Viva+" style={{ width: '72px', height: 'auto', marginBottom: '24px', filter: isDark ? 'none' : 'brightness(0.1)' }}/>
-            <h1 style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '-1px', color: 'var(--theme-fg)', marginBottom: '8px' }}>
+          <img 
+          src={`${import.meta.env.BASE_URL}logovivasemfundo.png`} 
+          alt="Símbolo Viva+" 
+          style={{ width: '72px', height: 'auto', marginBottom: '24px', filter: isDark ? 'none' : 'brightness(0.1)' }}/> 
+          <h1 style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '-1px', color: 'var(--theme-fg)', marginBottom: '8px' }}>
               Bem-vindo ao {' '}
               <span style={{ color: 'var(--theme-primary)' }}>Viva+</span>
             </h1>
