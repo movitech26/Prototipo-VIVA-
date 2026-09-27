@@ -46,7 +46,6 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            // O gradiente agora desvanece para a cor de fundo do tema em vez de um preto fixo
             background: 'linear-gradient(135deg, rgba(91,222,138,0.15) 0%, transparent 60%, var(--theme-bg) 100%)',
           }}
         />
@@ -62,6 +61,13 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
           <div>
+            {/* LOGO ADICIONADA AQUI DA PASTA PUBLIC */}
+            <img 
+              src={`${import.meta.env.BASE_URL}logovivasemfundo.png`} 
+              alt="Logo Viva+" 
+              style={{ width: '120px', height: 'auto', marginBottom: '20px', display: 'block' }}
+            />
+
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               background: 'rgba(91,222,138,0.12)', border: '1px solid rgba(91,222,138,0.3)',
