@@ -19,26 +19,32 @@ function RotaProtegida({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-export const router = createBrowserRouter([
-  // 1. Rotas Públicas (Sem Header/Footer)
-  { path: '/login', element: <Login /> },
-  { path: '/cadastro', element: <SignUp /> },
+export const router = createBrowserRouter(
+  [
+    // 1. Rotas Públicas (Sem Header/Footer)
+    { path: '/login', element: <Login /> },
+    { path: '/cadastro', element: <SignUp /> },
 
-  // 2. Rotas Privadas (Com Header/Footer do Layout)
+    // 2. Rotas Privadas (Com Header/Footer do Layout)
+    {
+      path: '/',
+      element: (
+        <RotaProtegida>
+          <Layout />
+        </RotaProtegida>
+      ),
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'mapa', element: <MapPage /> },
+        { path: 'alimentacao', element: <Calculator /> },
+      ],
+    },
+    
+    // Redireciona qualquer rota inválida de volta para a raiz
+    { path: '*', element: <Navigate to="/" replace /> },
+  ],
   {
-    path: '/',
-    element: (
-      <RotaProtegida>
-        <Layout />
-      </RotaProtegida>
-    ),
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'mapa', element: <MapPage /> },
-      { path: 'alimentacao', element: <Calculator /> },
-    ],
-  },
-  
-  // Redireciona qualquer rota inválida de volta para a raiz
-  { path: '*', element: <Navigate to="/" replace /> },
-]);
+    // Adicionamos o basename do repositório do GitHub Pages aqui:
+    basename: '/Prototipo-VIVA-',
+  }
+);
