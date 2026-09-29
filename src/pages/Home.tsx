@@ -41,14 +41,12 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.25)',
-          }}
-        />
+          }}/>
         <div
           className="absolute inset-0"
           style={{
             background: 'linear-gradient(135deg, rgba(91,222,138,0.15) 0%, transparent 60%, var(--theme-bg) 100%)',
-          }}
-        />
+          }}/>
 
         {/* diagonal accent line */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
