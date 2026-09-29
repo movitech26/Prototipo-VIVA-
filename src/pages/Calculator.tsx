@@ -76,7 +76,8 @@ export default function Calculator() {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [sex, setSex] = useState<Sex>('masculino');
-  const [activity, setActivity] = useState<ActivityLevel>('moderado');
+  const [activity, setActivity] =
+    useState<ActivityLevel>('moderado');
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState('');
 
@@ -135,7 +136,9 @@ export default function Calculator() {
         {
           name: 'Vegetais e verduras',
           icon: '🥦',
-          grams: Math.round(300 + (tdee - 2000) * 0.05),
+          grams: Math.round(
+            300 + (tdee - 2000) * 0.05
+          ),
           unit: 'g / dia',
         },
       ],
@@ -152,7 +155,7 @@ export default function Calculator() {
     fontSize: '15px',
     outline: 'none',
     fontFamily: "'Montserrat', sans-serif",
-    transition: 'border-color 0.2s',
+    transition: 'border-color 0.2s, box-shadow 0.2s',
   };
 
   const labelStyle = {
@@ -164,14 +167,21 @@ export default function Calculator() {
     marginBottom: '8px',
   };
 
+  const cardShadow =
+    '0 10px 30px rgba(15, 17, 23, 0.08)';
+
+  const smallCardShadow =
+    '0 4px 14px rgba(15, 17, 23, 0.05)';
+
   return (
     <div
       className="max-w-7xl mx-auto px-6 py-16"
       style={{
+        minHeight: 'calc(100vh - 64px)',
         background: 'var(--theme-bg)',
         color: 'var(--theme-fg)',
-        minHeight: '100vh',
-        transition: 'background-color 0.3s, color 0.3s',
+        transition:
+          'background-color 0.3s, color 0.3s',
       }}
     >
       <div className="max-w-3xl mx-auto">
@@ -208,9 +218,11 @@ export default function Calculator() {
               maxWidth: '560px',
             }}
           >
-            Insira seus dados para calcular sua Taxa Metabólica Basal (TMB) e
-            receba uma sugestão personalizada de alimentação diária baseada na
-            equação de Harris-Benedict.
+            Insira seus dados para calcular sua Taxa
+            Metabólica Basal (TMB) e receba uma
+            sugestão personalizada de alimentação
+            diária baseada na equação de
+            Harris-Benedict.
           </p>
         </div>
 
@@ -221,6 +233,9 @@ export default function Calculator() {
             border: '1px solid var(--theme-border)',
             borderRadius: '20px',
             padding: '36px',
+            boxShadow: cardShadow,
+            transition:
+              'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
           }}
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -231,52 +246,77 @@ export default function Calculator() {
                 type="number"
                 placeholder="25"
                 value={age}
-                onChange={(e) => setAge(e.target.value)}
+                onChange={(e) =>
+                  setAge(e.target.value)
+                }
                 style={inputStyle}
                 onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#5bde8a';
+                  (e.target as HTMLElement).style.borderColor =
+                    '#5bde8a';
+                  (e.target as HTMLElement).style.boxShadow =
+                    '0 0 0 3px rgba(91, 222, 138, 0.12)';
                 }}
                 onBlur={(e) => {
-                  e.currentTarget.style.borderColor =
+                  (e.target as HTMLElement).style.borderColor =
                     'var(--theme-border)';
+                  (e.target as HTMLElement).style.boxShadow =
+                    'none';
                 }}
               />
             </div>
 
             <div>
-              <label style={labelStyle}>PESO (kg)</label>
+              <label style={labelStyle}>
+                PESO (kg)
+              </label>
 
               <input
                 type="number"
                 placeholder="70"
                 value={weight}
-                onChange={(e) => setWeight(e.target.value)}
+                onChange={(e) =>
+                  setWeight(e.target.value)
+                }
                 style={inputStyle}
                 onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#5bde8a';
+                  (e.target as HTMLElement).style.borderColor =
+                    '#5bde8a';
+                  (e.target as HTMLElement).style.boxShadow =
+                    '0 0 0 3px rgba(91, 222, 138, 0.12)';
                 }}
                 onBlur={(e) => {
-                  e.currentTarget.style.borderColor =
+                  (e.target as HTMLElement).style.borderColor =
                     'var(--theme-border)';
+                  (e.target as HTMLElement).style.boxShadow =
+                    'none';
                 }}
               />
             </div>
 
             <div>
-              <label style={labelStyle}>ALTURA (cm)</label>
+              <label style={labelStyle}>
+                ALTURA (cm)
+              </label>
 
               <input
                 type="number"
                 placeholder="175"
                 value={height}
-                onChange={(e) => setHeight(e.target.value)}
+                onChange={(e) =>
+                  setHeight(e.target.value)
+                }
                 style={inputStyle}
                 onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#5bde8a';
+                  (e.target as HTMLElement).style.borderColor =
+                    '#5bde8a';
+                  (e.target as HTMLElement).style.boxShadow =
+                    '0 0 0 3px rgba(91, 222, 138, 0.12)';
                 }}
                 onBlur={(e) => {
-                  e.currentTarget.style.borderColor =
+                  (e.target as HTMLElement).style.borderColor =
                     'var(--theme-border)';
+                  (e.target as HTMLElement).style.boxShadow =
+                    'none';
                 }}
               />
             </div>
@@ -284,10 +324,14 @@ export default function Calculator() {
 
           {/* Sex */}
           <div className="mb-6">
-            <label style={labelStyle}>SEXO BIOLÓGICO</label>
+            <label style={labelStyle}>
+              SEXO BIOLÓGICO
+            </label>
 
             <div className="flex gap-4">
-              {(['masculino', 'feminino'] as Sex[]).map((s) => (
+              {(
+                ['masculino', 'feminino'] as Sex[]
+              ).map((s) => (
                 <button
                   key={s}
                   onClick={() => setSex(s)}
@@ -299,18 +343,25 @@ export default function Calculator() {
                     fontSize: '14px',
                     cursor: 'pointer',
                     transition: 'all 0.15s',
-                    fontFamily: "'Montserrat', sans-serif",
+                    fontFamily:
+                      "'Montserrat', sans-serif",
                     background:
-                      sex === s ? '#5bde8a' : 'var(--theme-bg)',
+                      sex === s
+                        ? '#5bde8a'
+                        : 'var(--theme-bg)',
                     color:
                       sex === s
-                        ? '#0a1a10'
+                        ? 'var(--theme-primary-fg)'
                         : 'var(--theme-muted-foreground)',
                     border: `1px solid ${
                       sex === s
                         ? '#5bde8a'
                         : 'var(--theme-border)'
                     }`,
+                    boxShadow:
+                      sex === s
+                        ? '0 4px 12px rgba(91, 222, 138, 0.18)'
+                        : 'none',
                   }}
                 >
                   {s === 'masculino'
@@ -337,25 +388,32 @@ export default function Calculator() {
               {activityOptions.map((opt) => (
                 <button
                   key={opt.value}
-                  onClick={() => setActivity(opt.value)}
+                  onClick={() =>
+                    setActivity(opt.value)
+                  }
                   style={{
                     padding: '12px 16px',
                     borderRadius: '10px',
                     cursor: 'pointer',
                     transition: 'all 0.15s',
-                    fontFamily: "'Montserrat', sans-serif",
+                    fontFamily:
+                      "'Montserrat', sans-serif",
                     background:
                       activity === opt.value
-                        ? 'rgba(91,222,138,0.1)'
+                        ? 'rgba(91, 222, 138, 0.10)'
                         : 'var(--theme-bg)',
                     border: `1px solid ${
                       activity === opt.value
-                        ? '#5bde8a55'
+                        ? 'rgba(91, 222, 138, 0.55)'
                         : 'var(--theme-border)'
                     }`,
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    boxShadow:
+                      activity === opt.value
+                        ? '0 3px 12px rgba(91, 222, 138, 0.08)'
+                        : 'none',
                   }}
                 >
                   <div className="text-left">
@@ -376,7 +434,8 @@ export default function Calculator() {
                     <span
                       style={{
                         fontSize: '12px',
-                        color: 'var(--theme-muted-foreground)',
+                        color:
+                          'var(--theme-muted-foreground)',
                       }}
                     >
                       {opt.desc}
@@ -386,7 +445,8 @@ export default function Calculator() {
                   <span
                     style={{
                       fontSize: '12px',
-                      color: 'var(--theme-muted-foreground)',
+                      color:
+                        'var(--theme-muted-foreground)',
                       fontWeight: 600,
                     }}
                   >
@@ -400,8 +460,10 @@ export default function Calculator() {
           {error && (
             <div
               style={{
-                background: 'rgba(255,80,80,0.1)',
-                border: '1px solid rgba(255,80,80,0.3)',
+                background:
+                  'rgba(255, 80, 80, 0.1)',
+                border:
+                  '1px solid rgba(255, 80, 80, 0.3)',
                 borderRadius: '10px',
                 padding: '12px 16px',
                 marginBottom: '16px',
@@ -412,7 +474,6 @@ export default function Calculator() {
                   color: '#ff8080',
                   fontSize: '14px',
                   fontWeight: 600,
-                  margin: 0,
                 }}
               >
                 ⚠️ {error}
@@ -425,24 +486,35 @@ export default function Calculator() {
             style={{
               width: '100%',
               background: '#5bde8a',
-              color: '#0a1a10',
+              color: 'var(--theme-primary-fg)',
               fontWeight: 800,
               fontSize: '16px',
               padding: '16px',
               borderRadius: '12px',
               border: 'none',
               cursor: 'pointer',
-              fontFamily: "'Montserrat', sans-serif",
+              fontFamily:
+                "'Montserrat', sans-serif",
               letterSpacing: '-0.3px',
               transition: 'all 0.2s',
+              boxShadow:
+                '0 6px 16px rgba(91, 222, 138, 0.18)',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#38e07b';
-              e.currentTarget.style.transform = 'translateY(-1px)';
+              (e.target as HTMLElement).style.background =
+                '#38e07b';
+              (e.target as HTMLElement).style.transform =
+                'translateY(-1px)';
+              (e.target as HTMLElement).style.boxShadow =
+                '0 8px 20px rgba(91, 222, 138, 0.25)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#5bde8a';
-              e.currentTarget.style.transform = 'translateY(0)';
+              (e.target as HTMLElement).style.background =
+                '#5bde8a';
+              (e.target as HTMLElement).style.transform =
+                'translateY(0)';
+              (e.target as HTMLElement).style.boxShadow =
+                '0 6px 16px rgba(91, 222, 138, 0.18)';
             }}
           >
             Calcular →
@@ -457,29 +529,32 @@ export default function Calculator() {
               animation: 'fadeIn 0.4s ease',
             }}
           >
-            <style>
-              {`
-                @keyframes fadeIn {
-                  from {
-                    opacity: 0;
-                    transform: translateY(16px);
-                  }
-                  to {
-                    opacity: 1;
-                    transform: translateY(0);
-                  }
+            <style>{`
+              @keyframes fadeIn {
+                from {
+                  opacity: 0;
+                  transform: translateY(16px);
                 }
-              `}
-            </style>
+
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+            `}</style>
 
             {/* TMB / TDEE header */}
             <div
               style={{
                 background: 'var(--theme-card)',
-                border: '1px solid #5bde8a33',
+                border:
+                  '1px solid rgba(91, 222, 138, 0.35)',
                 borderRadius: '20px',
                 padding: '32px',
                 marginBottom: '24px',
+                boxShadow: cardShadow,
+                transition:
+                  'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
               }}
             >
               <div
@@ -496,6 +571,8 @@ export default function Calculator() {
                     height: '8px',
                     borderRadius: '50%',
                     background: '#5bde8a',
+                    boxShadow:
+                      '0 0 10px rgba(91, 222, 138, 0.35)',
                   }}
                 />
 
@@ -516,15 +593,20 @@ export default function Calculator() {
                 <div
                   style={{
                     background: 'var(--theme-bg)',
+                    border:
+                      '1px solid var(--theme-border)',
                     borderRadius: '14px',
                     padding: '24px',
                     textAlign: 'center',
-                    border: '1px solid var(--theme-border)',
+                    boxShadow: smallCardShadow,
+                    transition:
+                      'background-color 0.3s, border-color 0.3s',
                   }}
                 >
                   <p
                     style={{
-                      color: 'var(--theme-muted-foreground)',
+                      color:
+                        'var(--theme-muted-foreground)',
                       fontSize: '13px',
                       fontWeight: 600,
                       marginBottom: '12px',
@@ -542,12 +624,15 @@ export default function Calculator() {
                       lineHeight: 1,
                     }}
                   >
-                    {result.tmb.toLocaleString('pt-BR')}
+                    {result.tmb.toLocaleString(
+                      'pt-BR'
+                    )}
                   </div>
 
                   <div
                     style={{
-                      color: 'var(--theme-muted-foreground)',
+                      color:
+                        'var(--theme-muted-foreground)',
                       fontSize: '14px',
                       marginTop: '6px',
                     }}
@@ -559,15 +644,20 @@ export default function Calculator() {
                 <div
                   style={{
                     background: 'var(--theme-bg)',
+                    border:
+                      '1px solid var(--theme-border)',
                     borderRadius: '14px',
                     padding: '24px',
                     textAlign: 'center',
-                    border: '1px solid var(--theme-border)',
+                    boxShadow: smallCardShadow,
+                    transition:
+                      'background-color 0.3s, border-color 0.3s',
                   }}
                 >
                   <p
                     style={{
-                      color: 'var(--theme-muted-foreground)',
+                      color:
+                        'var(--theme-muted-foreground)',
                       fontSize: '13px',
                       fontWeight: 600,
                       marginBottom: '12px',
@@ -585,12 +675,15 @@ export default function Calculator() {
                       lineHeight: 1,
                     }}
                   >
-                    {result.tdee.toLocaleString('pt-BR')}
+                    {result.tdee.toLocaleString(
+                      'pt-BR'
+                    )}
                   </div>
 
                   <div
                     style={{
-                      color: 'var(--theme-muted-foreground)',
+                      color:
+                        'var(--theme-muted-foreground)',
                       fontSize: '14px',
                       marginTop: '6px',
                     }}
@@ -605,9 +698,13 @@ export default function Calculator() {
             <div
               style={{
                 background: 'var(--theme-card)',
-                border: '1px solid var(--theme-border)',
+                border:
+                  '1px solid var(--theme-border)',
                 borderRadius: '20px',
                 padding: '32px',
+                boxShadow: cardShadow,
+                transition:
+                  'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
               }}
             >
               <h3
@@ -624,13 +721,15 @@ export default function Calculator() {
 
               <p
                 style={{
-                  color: 'var(--theme-muted-foreground)',
+                  color:
+                    'var(--theme-muted-foreground)',
                   fontSize: '14px',
                   marginBottom: '24px',
                 }}
               >
-                Quantidades aproximadas para manter seu peso atual com o
-                nível de atividade informado.
+                Quantidades aproximadas para manter
+                seu peso atual com o nível de atividade
+                informado.
               </p>
 
               <div
@@ -648,9 +747,13 @@ export default function Calculator() {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       background: 'var(--theme-bg)',
-                      border: '1px solid var(--theme-border)',
+                      border:
+                        '1px solid var(--theme-border)',
                       borderRadius: '12px',
                       padding: '16px 20px',
+                      boxShadow: smallCardShadow,
+                      transition:
+                        'background-color 0.3s, border-color 0.3s',
                     }}
                   >
                     <div
@@ -660,7 +763,11 @@ export default function Calculator() {
                         gap: '14px',
                       }}
                     >
-                      <span style={{ fontSize: '28px' }}>
+                      <span
+                        style={{
+                          fontSize: '28px',
+                        }}
+                      >
                         {meal.icon}
                       </span>
 
@@ -675,7 +782,11 @@ export default function Calculator() {
                       </span>
                     </div>
 
-                    <div style={{ textAlign: 'right' }}>
+                    <div
+                      style={{
+                        textAlign: 'right',
+                      }}
+                    >
                       <div
                         style={{
                           fontWeight: 900,
@@ -689,7 +800,8 @@ export default function Calculator() {
 
                       <div
                         style={{
-                          color: 'var(--theme-muted-foreground)',
+                          color:
+                            'var(--theme-muted-foreground)',
                           fontSize: '12px',
                         }}
                       >
@@ -703,26 +815,33 @@ export default function Calculator() {
               <div
                 style={{
                   marginTop: '20px',
-                  background: 'rgba(91,222,138,0.08)',
-                  border: '1px solid rgba(91,222,138,0.2)',
+                  background:
+                    'rgba(91, 222, 138, 0.08)',
+                  border:
+                    '1px solid rgba(91, 222, 138, 0.2)',
                   borderRadius: '10px',
                   padding: '14px 18px',
                 }}
               >
                 <p
                   style={{
-                    color: 'var(--theme-muted-foreground)',
+                    color:
+                      'var(--theme-muted-foreground)',
                     fontSize: '13px',
                     lineHeight: 1.6,
-                    margin: 0,
                   }}
                 >
                   ⚠️{' '}
-                  <strong style={{ color: 'var(--theme-fg)' }}>
+                  <strong
+                    style={{
+                      color: 'var(--theme-fg)',
+                    }}
+                  >
                     Aviso:
                   </strong>{' '}
-                  Estas são estimativas orientativas. Consulte um nutricionista
-                  para um plano alimentar personalizado e seguro.
+                  Estas são estimativas orientativas.
+                  Consulte um nutricionista para um
+                  plano alimentar personalizado e seguro.
                 </p>
               </div>
             </div>
