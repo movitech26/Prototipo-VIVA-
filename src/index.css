@@ -66,11 +66,21 @@ html, body, #root {
 /* --- SCROLLBAR --- */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #2a2f45 transparent;
+  scrollbar-color: var(--theme-border) transparent;
 }
-*::-webkit-scrollbar { width: 6px; }
-*::-webkit-scrollbar-track { background: transparent; }
-*::-webkit-scrollbar-thumb { background-color: #2a2f45; border-radius: 3px; }
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--theme-border);
+  border-radius: 3px;
+}
 
 body {
   background-color: var(--theme-bg);
