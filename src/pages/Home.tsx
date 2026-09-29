@@ -62,11 +62,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
           <div>
             {/* LOGO ADICIONADA AQUI DA PASTA PUBLIC */}
-            <img 
-              src={`${import.meta.env.BASE_URL}logovivasemfundo.png`} 
-              alt="Logo Viva+" 
-              style={{ width: '120px', height: 'auto', marginBottom: '20px', display: 'block' }}
-            />
+            <img src={`${import.meta.env.BASE_URL}logovivasemfundo.png`} alt="Logo Viva+" style={{ width: '120px', height: 'auto', marginBottom: '20px', display: 'block' }}/>
 
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
