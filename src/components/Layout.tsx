@@ -19,8 +19,13 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col transition-colors duration-300" style={{ background: 'var(--theme-bg)', color: 'var(--theme-fg)', fontFamily: "'Montserrat', sans-serif" }}>
       
-      <header style={{ borderBottom: '1px solid var(--theme-border)', background: 'color-mix(in srgb, var(--theme-bg) 95%, transparent)', backdropFilter: 'blur(12px)' }} className="sticky top-0 z-50 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <header
+      style={{
+      borderBottom: '1px solid var(--theme-border)',
+      background: 'var(--theme-bg)',
+      backdropFilter: 'blur(12px)', }}
+      className="sticky top-0 z-50 transition-colors duration-300">     
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <NavLink to="/" className="flex items-center gap-2 group">
             {/* Caminho da imagem atualizado */}
           <img src={`${import.meta.env.BASE_URL}${isDark ? 'modoescurologo.png' : 'modoclarologo.png'}`} alt="Símbolo Viva+" style={{ width: '42px', height: 'auto' }}/>
