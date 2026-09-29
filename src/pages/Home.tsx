@@ -33,107 +33,259 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: '88vh', display: 'flex', alignItems: 'center' }}>
+      <section
+        className="relative overflow-hidden"
+        style={{
+          minHeight: '88vh',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        {/* Imagem de fundo */}
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1440&h=900&fit=crop&auto=format)',
+            backgroundImage:
+              'url(https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1440&h=900&fit=crop&auto=format)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'brightness(0.25)',
-          }}/>
+            filter: 'brightness(0.55)',
+          }}
+        />
+
+        {/* Overlay para melhorar a leitura do texto */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(135deg, rgba(91,222,138,0.15) 0%, transparent 60%, var(--theme-bg) 100%)',
-          }}/>
+            background: `
+              linear-gradient(
+                90deg,
+                rgba(15, 17, 23, 0.88) 0%,
+                rgba(15, 17, 23, 0.68) 38%,
+                rgba(15, 17, 23, 0.25) 65%,
+                rgba(15, 17, 23, 0.05) 100%
+              )
+            `,
+          }}
+        />
 
-        {/* diagonal accent line */}
+        {/* Linha diagonal decorativa */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div style={{
-            position: 'absolute', top: 0, right: '20%',
-            width: '1px', height: '100%',
-            background: 'linear-gradient(180deg, transparent, #5bde8a33, transparent)',
-          }} />
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: '20%',
+              width: '1px',
+              height: '100%',
+              background:
+                'linear-gradient(180deg, transparent, #5bde8a33, transparent)',
+            }}
+          />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
+          {/* Conteúdo principal */}
           <div>
-            {/* LOGO ADICIONADA AQUI DA PASTA PUBLIC */}
-            <img src={`${import.meta.env.BASE_URL}logovivasemfundo.png`} alt="Logo Viva+" style={{ width: '120px', height: 'auto', marginBottom: '20px', display: 'block' }}/>
+            {/* LOGO */}
+            <img
+              src={`${import.meta.env.BASE_URL}logovivasemfundo.png`}
+              alt="Logo Viva+"
+              style={{
+                width: '120px',
+                height: 'auto',
+                marginBottom: '20px',
+                display: 'block',
+              }}
+            />
 
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              background: 'rgba(91,222,138,0.12)', border: '1px solid rgba(91,222,138,0.3)',
-              borderRadius: '100px', padding: '6px 14px', marginBottom: '28px',
-            }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#5bde8a', display: 'inline-block' }} />
-              <span style={{ color: '#5bde8a', fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase' }}>Caruaru · PE</span>
+            {/* Localização */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'rgba(91,222,138,0.12)',
+                border: '1px solid rgba(91,222,138,0.3)',
+                borderRadius: '100px',
+                padding: '6px 14px',
+                marginBottom: '28px',
+              }}
+            >
+              <span
+                style={{
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  background: '#5bde8a',
+                  display: 'inline-block',
+                }}
+              />
+
+              <span
+                style={{
+                  color: '#5bde8a',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  letterSpacing: '1.5px',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Caruaru · PE
+              </span>
             </div>
 
-            <h1 style={{
-              fontSize: 'clamp(2.8rem, 5vw, 5rem)',
-              fontWeight: 900,
-              lineHeight: 1.0,
-              letterSpacing: '-2px',
-              marginBottom: '24px',
-              color: 'var(--theme-fg)',
-            }}>
-              Mais<br />
-              <span style={{ color: '#5bde8a' }}>movimento.</span><br />
+            {/* Título principal */}
+            <h1
+              style={{
+                fontSize: 'clamp(2.8rem, 5vw, 5rem)',
+                fontWeight: 900,
+                lineHeight: 1.0,
+                letterSpacing: '-2px',
+                marginBottom: '24px',
+                color: '#FFFFFF',
+              }}
+            >
+              Mais
+              <br />
+              <span style={{ color: '#5bde8a' }}>movimento.</span>
+              <br />
               Mais vida.
             </h1>
 
-            <p style={{ fontSize: '18px', color: 'var(--theme-muted-foreground)', lineHeight: 1.7, marginBottom: '40px', maxWidth: '460px' }}>
-              Descubra os melhores locais de prática esportiva em Caruaru, calcule sua dieta ideal e transforme seu estilo de vida com o Viva+.
+            {/* Descrição */}
+            <p
+              style={{
+                fontSize: '18px',
+                color: 'rgba(255,255,255,0.82)',
+                lineHeight: 1.7,
+                marginBottom: '40px',
+                maxWidth: '460px',
+              }}
+            >
+              Descubra os melhores locais de prática esportiva em Caruaru,
+              calcule sua dieta ideal e transforme seu estilo de vida com o
+              Viva+.
             </p>
 
+            {/* Botões */}
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => navigate('/mapa')}
                 style={{
-                  background: '#5bde8a', color: '#0a1a10', fontWeight: 800,
-                  fontSize: '15px', padding: '14px 32px', borderRadius: '10px',
-                  border: 'none', cursor: 'pointer', letterSpacing: '-0.3px',
+                  background: '#5bde8a',
+                  color: '#0a1a10',
+                  fontWeight: 800,
+                  fontSize: '15px',
+                  padding: '14px 32px',
+                  borderRadius: '10px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  letterSpacing: '-0.3px',
                   transition: 'all 0.2s',
                 }}
-                onMouseEnter={e => { (e.target as HTMLElement).style.background = '#38e07b'; (e.target as HTMLElement).style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { (e.target as HTMLElement).style.background = '#5bde8a'; (e.target as HTMLElement).style.transform = 'translateY(0)'; }}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLElement).style.background = '#38e07b';
+                  (e.target as HTMLElement).style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.target as HTMLElement).style.background = '#5bde8a';
+                  (e.target as HTMLElement).style.transform = 'translateY(0)';
+                }}
               >
                 Explorar Locais →
               </button>
+
               <button
                 onClick={() => navigate('/alimentacao')}
                 style={{
-                  background: 'transparent', color: 'var(--theme-fg)', fontWeight: 700,
-                  fontSize: '15px', padding: '14px 32px', borderRadius: '10px',
-                  border: '1px solid var(--theme-border)', cursor: 'pointer',
+                  background: 'rgba(15,17,23,0.25)',
+                  color: '#FFFFFF',
+                  fontWeight: 700,
+                  fontSize: '15px',
+                  padding: '14px 32px',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255,255,255,0.7)',
+                  cursor: 'pointer',
                   transition: 'all 0.2s',
                 }}
-                onMouseEnter={e => { (e.target as HTMLElement).style.borderColor = '#5bde8a'; (e.target as HTMLElement).style.color = '#5bde8a'; }}
-                onMouseLeave={e => { (e.target as HTMLElement).style.borderColor = 'var(--theme-border)'; (e.target as HTMLElement).style.color = 'var(--theme-fg)'; }}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLElement).style.borderColor = '#5bde8a';
+                  (e.target as HTMLElement).style.color = '#5bde8a';
+                }}
+                onMouseLeave={(e) => {
+                  (e.target as HTMLElement).style.borderColor =
+                    'rgba(255,255,255,0.7)';
+                  (e.target as HTMLElement).style.color = '#FFFFFF';
+                }}
               >
                 Calcular Dieta
               </button>
             </div>
           </div>
 
+          {/* Estatísticas */}
           <div className="hidden md:flex flex-col gap-4">
             {[
-              { label: 'Locais mapeados', value: '37+', sub: 'em Caruaru' },
-              { label: 'Kcal calculadas', value: '12k', sub: 'este mês' },
-              { label: 'Categorias', value: '8', sub: 'de atividade' },
-            ].map(stat => (
-              <div key={stat.label} style={{
-                background: 'var(--theme-card)', border: '1px solid var(--theme-border)',
-                borderRadius: '12px', padding: '20px 24px',
-                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                backdropFilter: 'blur(8px)',
-              }}>
-                <span style={{ color: 'var(--theme-muted-foreground)', fontSize: '14px', fontWeight: 600 }}>{stat.label}</span>
+              {
+                label: 'Locais mapeados',
+                value: '37+',
+                sub: 'em Caruaru',
+              },
+              {
+                label: 'Kcal calculadas',
+                value: '12k',
+                sub: 'este mês',
+              },
+              {
+                label: 'Categorias',
+                value: '8',
+                sub: 'de atividade',
+              },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                style={{
+                  background: 'var(--theme-card)',
+                  border: '1px solid var(--theme-border)',
+                  borderRadius: '12px',
+                  padding: '20px 24px',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                <span
+                  style={{
+                    color: 'var(--theme-muted-foreground)',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                  }}
+                >
+                  {stat.label}
+                </span>
+
                 <div className="text-right">
-                  <div style={{ color: '#5bde8a', fontSize: '28px', fontWeight: 900, lineHeight: 1 }}>{stat.value}</div>
-                  <div style={{ color: 'var(--theme-muted-foreground)', fontSize: '12px' }}>{stat.sub}</div>
+                  <div
+                    style={{
+                      color: '#5bde8a',
+                      fontSize: '28px',
+                      fontWeight: 900,
+                      lineHeight: 1,
+                    }}
+                  >
+                    {stat.value}
+                  </div>
+
+                  <div
+                    style={{
+                      color: 'var(--theme-muted-foreground)',
+                      fontSize: '12px',
+                    }}
+                  >
+                    {stat.sub}
+                  </div>
                 </div>
               </div>
             ))}
@@ -145,57 +297,156 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
-            <span style={{ color: '#5bde8a', fontSize: '12px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>Esportes</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 800, letterSpacing: '-1px', marginTop: '8px', color: 'var(--theme-fg)' }}>
+            <span
+              style={{
+                color: '#5bde8a',
+                fontSize: '12px',
+                fontWeight: 700,
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Esportes
+            </span>
+
+            <h2
+              style={{
+                fontSize: 'clamp(2rem, 3vw, 2.8rem)',
+                fontWeight: 800,
+                letterSpacing: '-1px',
+                marginTop: '8px',
+                color: 'var(--theme-fg)',
+              }}
+            >
               Locais em Caruaru
             </h2>
           </div>
+
           <button
             onClick={() => navigate('/mapa')}
-            style={{ color: '#5bde8a', fontSize: '14px', fontWeight: 700, background: 'none', border: 'none', cursor: 'pointer' }}
+            style={{
+              color: '#5bde8a',
+              fontSize: '14px',
+              fontWeight: 700,
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+            }}
           >
             Ver todos no mapa →
           </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {spots.map(spot => (
+          {spots.map((spot) => (
             <div
               key={spot.id}
               style={{
-                background: 'var(--theme-card)', border: '1px solid var(--theme-border)',
-                borderRadius: '16px', overflow: 'hidden',
+                background: 'var(--theme-card)',
+                border: '1px solid var(--theme-border)',
+                borderRadius: '16px',
+                overflow: 'hidden',
                 transition: 'transform 0.2s, border-color 0.2s',
                 cursor: 'pointer',
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)'; (e.currentTarget as HTMLElement).style.borderColor = '#5bde8a55'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.borderColor = 'var(--theme-border)'; }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.transform =
+                  'translateY(-4px)';
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  '#5bde8a55';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.transform =
+                  'translateY(0)';
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  'var(--theme-border)';
+              }}
             >
-              <div style={{ position: 'relative', height: '200px', background: 'var(--theme-bg)' }}>
-                <img src={spot.img} alt={spot.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                <div style={{
-                  position: 'absolute', top: '12px', left: '12px',
-                  background: 'var(--theme-card)', backdropFilter: 'blur(8px)',
-                  borderRadius: '8px', padding: '4px 10px',
-                  fontSize: '12px', fontWeight: 700, color: '#5bde8a',
-                  border: '1px solid rgba(91,222,138,0.3)',
-                }}>
+              <div
+                style={{
+                  position: 'relative',
+                  height: '200px',
+                  background: 'var(--theme-bg)',
+                }}
+              >
+                <img
+                  src={spot.img}
+                  alt={spot.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '12px',
+                    left: '12px',
+                    background: 'var(--theme-card)',
+                    backdropFilter: 'blur(8px)',
+                    borderRadius: '8px',
+                    padding: '4px 10px',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#5bde8a',
+                    border: '1px solid rgba(91,222,138,0.3)',
+                  }}
+                >
                   {spot.badge} {spot.type}
                 </div>
               </div>
+
               <div style={{ padding: '20px' }}>
-                <h3 style={{ fontWeight: 700, fontSize: '16px', color: 'var(--theme-fg)', marginBottom: '8px', letterSpacing: '-0.3px' }}>{spot.name}</h3>
-                <p style={{ color: 'var(--theme-muted-foreground)', fontSize: '14px', lineHeight: 1.6, marginBottom: '16px' }}>{spot.desc}</p>
+                <h3
+                  style={{
+                    fontWeight: 700,
+                    fontSize: '16px',
+                    color: 'var(--theme-fg)',
+                    marginBottom: '8px',
+                    letterSpacing: '-0.3px',
+                  }}
+                >
+                  {spot.name}
+                </h3>
+
+                <p
+                  style={{
+                    color: 'var(--theme-muted-foreground)',
+                    fontSize: '14px',
+                    lineHeight: 1.6,
+                    marginBottom: '16px',
+                  }}
+                >
+                  {spot.desc}
+                </p>
+
                 <button
                   onClick={() => navigate('/mapa')}
                   style={{
-                    width: '100%', background: 'transparent', border: '1px solid var(--theme-border)',
-                    color: 'var(--theme-muted-foreground)', borderRadius: '8px', padding: '10px',
-                    fontSize: '13px', fontWeight: 600, cursor: 'pointer',
+                    width: '100%',
+                    background: 'transparent',
+                    border: '1px solid var(--theme-border)',
+                    color: 'var(--theme-muted-foreground)',
+                    borderRadius: '8px',
+                    padding: '10px',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
                     transition: 'all 0.2s',
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#5bde8a'; (e.currentTarget as HTMLElement).style.color = '#5bde8a'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--theme-border)'; (e.currentTarget as HTMLElement).style.color = 'var(--theme-muted-foreground)'; }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor =
+                      '#5bde8a';
+                    (e.currentTarget as HTMLElement).style.color = '#5bde8a';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor =
+                      'var(--theme-border)';
+                    (e.currentTarget as HTMLElement).style.color =
+                      'var(--theme-muted-foreground)';
+                  }}
                 >
                   Ver no Mapa
                 </button>
@@ -206,47 +457,154 @@ export default function Home() {
       </section>
 
       {/* Alimentação & TMB */}
-      <section style={{ background: 'var(--theme-card)', borderTop: '1px solid var(--theme-border)', borderBottom: '1px solid var(--theme-border)' }}>
+      <section
+        style={{
+          background: 'var(--theme-card)',
+          borderTop: '1px solid var(--theme-border)',
+          borderBottom: '1px solid var(--theme-border)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <span style={{ color: '#5bde8a', fontSize: '12px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>Nutrição</span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)', fontWeight: 800, letterSpacing: '-1px', margin: '12px 0 20px', color: 'var(--theme-fg)' }}>
+            <span
+              style={{
+                color: '#5bde8a',
+                fontSize: '12px',
+                fontWeight: 700,
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Nutrição
+            </span>
+
+            <h2
+              style={{
+                fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)',
+                fontWeight: 800,
+                letterSpacing: '-1px',
+                margin: '12px 0 20px',
+                color: 'var(--theme-fg)',
+              }}
+            >
               Alimentação &amp; TMB
             </h2>
-            <p style={{ color: 'var(--theme-muted-foreground)', fontSize: '16px', lineHeight: 1.8, marginBottom: '16px' }}>
-              A <strong style={{ color: 'var(--theme-fg)' }}>Taxa Metabólica Basal (TMB)</strong> é a quantidade mínima de energia que seu corpo precisa em repouso. Conhecê-la é o primeiro passo para uma dieta eficaz.
+
+            <p
+              style={{
+                color: 'var(--theme-muted-foreground)',
+                fontSize: '16px',
+                lineHeight: 1.8,
+                marginBottom: '16px',
+              }}
+            >
+              A{' '}
+              <strong style={{ color: 'var(--theme-fg)' }}>
+                Taxa Metabólica Basal (TMB)
+              </strong>{' '}
+              é a quantidade mínima de energia que seu corpo precisa em
+              repouso. Conhecê-la é o primeiro passo para uma dieta eficaz.
             </p>
-            <p style={{ color: 'var(--theme-muted-foreground)', fontSize: '16px', lineHeight: 1.8, marginBottom: '32px' }}>
-              Nossa calculadora usa a equação de Harris-Benedict revisada para estimar sua TMB e sugere quantidades de alimentos base como arroz, feijão e proteínas para cada refeição.
+
+            <p
+              style={{
+                color: 'var(--theme-muted-foreground)',
+                fontSize: '16px',
+                lineHeight: 1.8,
+                marginBottom: '32px',
+              }}
+            >
+              Nossa calculadora usa a equação de Harris-Benedict revisada para
+              estimar sua TMB e sugere quantidades de alimentos base como
+              arroz, feijão e proteínas para cada refeição.
             </p>
+
             <button
               onClick={() => navigate('/alimentacao')}
               style={{
-                background: '#5bde8a', color: '#0a1a10', fontWeight: 800,
-                fontSize: '15px', padding: '14px 32px', borderRadius: '10px',
-                border: 'none', cursor: 'pointer', transition: 'all 0.2s',
+                background: '#5bde8a',
+                color: '#0a1a10',
+                fontWeight: 800,
+                fontSize: '15px',
+                padding: '14px 32px',
+                borderRadius: '10px',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
               }}
-              onMouseEnter={e => { (e.target as HTMLElement).style.background = '#38e07b'; }}
-              onMouseLeave={e => { (e.target as HTMLElement).style.background = '#5bde8a'; }}
+              onMouseEnter={(e) => {
+                (e.target as HTMLElement).style.background = '#38e07b';
+              }}
+              onMouseLeave={(e) => {
+                (e.target as HTMLElement).style.background = '#5bde8a';
+              }}
             >
               Calcular Minha Dieta →
             </button>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '16px',
+            }}
+          >
             {[
-              { icon: '⚡', label: 'TMB', desc: 'Taxa Metabólica Basal calculada com precisão' },
-              { icon: '🍚', label: 'Arroz', desc: 'Gramas ideais por refeição' },
-              { icon: '🫘', label: 'Feijão', desc: 'Porção equilibrada de leguminosas' },
-              { icon: '🥩', label: 'Proteína', desc: 'Quantidade adequada ao seu objetivo' },
-            ].map(item => (
-              <div key={item.label} style={{
-                background: 'var(--theme-bg)', border: '1px solid var(--theme-border)',
-                borderRadius: '12px', padding: '20px',
-              }}>
-                <div style={{ fontSize: '28px', marginBottom: '10px' }}>{item.icon}</div>
-                <div style={{ fontWeight: 700, color: 'var(--theme-fg)', marginBottom: '6px', fontSize: '15px' }}>{item.label}</div>
-                <div style={{ color: 'var(--theme-muted-foreground)', fontSize: '13px', lineHeight: 1.5 }}>{item.desc}</div>
+              {
+                icon: '⚡',
+                label: 'TMB',
+                desc: 'Taxa Metabólica Basal calculada com precisão',
+              },
+              {
+                icon: '🍚',
+                label: 'Arroz',
+                desc: 'Gramas ideais por refeição',
+              },
+              {
+                icon: '🫘',
+                label: 'Feijão',
+                desc: 'Porção equilibrada de leguminosas',
+              },
+              {
+                icon: '🥩',
+                label: 'Proteína',
+                desc: 'Quantidade adequada ao seu objetivo',
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                style={{
+                  background: 'var(--theme-bg)',
+                  border: '1px solid var(--theme-border)',
+                  borderRadius: '12px',
+                  padding: '20px',
+                }}
+              >
+                <div style={{ fontSize: '28px', marginBottom: '10px' }}>
+                  {item.icon}
+                </div>
+
+                <div
+                  style={{
+                    fontWeight: 700,
+                    color: 'var(--theme-fg)',
+                    marginBottom: '6px',
+                    fontSize: '15px',
+                  }}
+                >
+                  {item.label}
+                </div>
+
+                <div
+                  style={{
+                    color: 'var(--theme-muted-foreground)',
+                    fontSize: '13px',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {item.desc}
+                </div>
               </div>
             ))}
           </div>
