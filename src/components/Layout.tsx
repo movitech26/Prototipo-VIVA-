@@ -94,7 +94,7 @@ export default function Layout() {
           
           <div className="flex items-center">
             {/* Caminho da imagem atualizado */}
-            <img src="/logovivasemfundo.png" alt="Logo Viva+" style={{ height: '32px', width: 'auto', filter: isDark ? 'none' : 'brightness(0.1)' }} />
+            <img src={`${import.meta.env.BASE_URL}logovivasemfundo.png`} alt="Símbolo Viva+" style={{ width: '36px', height: 'auto', filter: isDark ? 'none' : 'brightness(0.1)'}}/>
           </div>
           
           <p style={{ color: 'var(--theme-muted-foreground)', fontSize: '13px' }}>
