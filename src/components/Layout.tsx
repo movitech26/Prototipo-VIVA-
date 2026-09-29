@@ -23,7 +23,7 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <NavLink to="/" className="flex items-center gap-2 group">
             {/* Caminho da imagem atualizado */}
-            <img src={`${import.meta.env.BASE_URL}Icon.png`} alt="Símbolo Viva+" style={{ width: '36px', height: 'auto', filter: isDark ? 'none' : 'brightness(0.1)'}}/>
+          <img src={`${import.meta.env.BASE_URL}${isDark ? 'modoescurologo.png' : 'modoclarologo.png'}`} alt="Símbolo Viva+" style={{ width: '36px', height: 'auto'}}/>
             <span style={{ fontWeight: 800, fontSize: '20px', letterSpacing: '-0.5px', color: 'var(--theme-fg)' }}></span>
           </NavLink>
 
@@ -94,7 +94,7 @@ export default function Layout() {
           
           <div className="flex items-center">
             {/* Caminho da imagem atualizado */}
-            <img src={`${import.meta.env.BASE_URL}movimodoescuro.png`} alt="Símbolo Viva+" style={{ width: '80px', height: 'auto', filter: isDark ? 'none' : 'brightness(0.1)'}}/>
+            <img src={`${import.meta.env.BASE_URL}${isDark ? 'modoescurologo.png' : 'modoclarologo.png'}`} alt="Símbolo Viva+" style={{ width: '85px', height: 'auto'}}/>
           </div>
           
           <p style={{ color: 'var(--theme-muted-foreground)', fontSize: '13px' }}>
