@@ -60,5 +60,5 @@ export const router = createHashRouter([
     element: <Navigate to="/" replace />,
   },
 ]);
-```
+
 
