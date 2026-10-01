@@ -261,5 +261,11 @@ export default function SignUp() {
             <div style={{ marginBottom: '16px' }}>
               <p
                 style={{
-                  fontWeight: 700,
+                  fontWeight: 700, 
+                         </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
