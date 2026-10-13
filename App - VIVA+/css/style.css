@@ -1,0 +1,12 @@
+.background-geral {
+    background-color: gray;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0f1117;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
