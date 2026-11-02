@@ -1,20 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <meta name="description" content="VIVA+ — esportes, saúde e nutrição em Caruaru.">
+    <title>VIVA+ | Início</title>
+
+    <link rel="icon" type="image/png" href="../img/modoclarologo.png" sizes="32x32">
+
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
 </head>
-    
-<body class="background-geral">
+<body>
     <div id="cabecalhonav"></div>
-    <div>
-        <h1>Começo do site</h1>
-    </div>
 
-    <footer>    
+    <main>
+        <section class="hero" aria-labelledby="titulo-principal">
+            <div class="hero-container">
+                <div class="hero-conteudo">
+                    <span class="etiqueta-local"><i aria-hidden="true"></i> Caruaru · PE</span>
+                    <h1 id="titulo-principal">Mais <strong>movimento.</strong><br>Mais vida.</h1>
+                    <p>Descubra os melhores locais de prática esportiva em Caruaru, calcule sua dieta ideal e transforme seu estilo de vida com o Viva+.</p>
+                    <div class="hero-acoes">
+                        <a class="botao botao-principal" href="mapa.html">Explorar Locais <span aria-hidden="true">→</span></a>
+                        <a class="botao botao-secundario" href="alimentacao.html">Calcular Dieta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-locais" aria-labelledby="titulo-locais">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <div>
+                        <span class="sobretitulo">Esportes</span>
+                        <h2 id="titulo-locais">Locais em Caruaru</h2>
+                    </div>
+                    <a class="link-destaque" href="mapa.html">Ver todos no mapa <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="grade-locais">
+                    <article class="cartao-local">
+                        <div class="cartao-imagem">
+                            <img src="../img/local-skate.jpg" alt="Pista de skate com obstáculos e rampas" loading="lazy">
+                            <span>🛹 Skate</span>
+                        </div>
+                        <div class="cartao-conteudo">
+                            <h3>Pista de Skate — Parque 18 de Maio</h3>
+                            <p>Pista pública com bowl e street, aberta ao público 24h.</p>
+                            <a href="mapa.html">Ver no Mapa</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-local">
+                        <div class="cartao-imagem">
+                            <img src="../img/local-quadra.jpg" alt="Bolas em uma quadra poliesportiva" loading="lazy">
+                            <span>🏀 Quadra</span>
+                        </div>
+                        <div class="cartao-conteudo">
+                            <h3>Quadra Poliesportiva — Bairro Universitário</h3>
+                            <p>Quadra coberta para futsal, basquete e vôlei. Iluminação noturna.</p>
+                            <a href="mapa.html">Ver no Mapa</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-local">
+                        <div class="cartao-imagem">
+                            <img src="../img/local-ciclovia.jpg" alt="Pessoa pedalando em uma ciclovia" loading="lazy">
+                            <span>🚴 Ciclovia</span>
+                        </div>
+                        <div class="cartao-conteudo">
+                            <h3>Ciclovia — Av. Rio Branco</h3>
+                            <p>4,2 km de ciclovia contínua com sinalização e pontos de descanso.</p>
+                            <a href="mapa.html">Ver no Mapa</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-nutricao" aria-labelledby="titulo-nutricao">
+            <div class="container nutricao-layout">
+                <div class="nutricao-texto">
+                    <span class="sobretitulo">Nutrição</span>
+                    <h2 id="titulo-nutricao">Alimentação &amp; TMB</h2>
+                    <div class="texto-destaque">
+                        <p>A <strong>Taxa Metabólica Basal (TMB)</strong> é a quantidade mínima de energia que seu corpo precisa em repouso. Conhecê-la é o primeiro passo para uma dieta eficaz.</p>
+                    </div>
+                    <p>Nossa calculadora usa a equação de Harris-Benedict revisada para estimar sua TMB e sugere quantidades de alimentos base como arroz, feijão e proteínas para cada refeição.</p>
+                    <a class="botao botao-principal" href="alimentacao.html">Calcular Minha Dieta <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="grade-beneficios" aria-label="Benefícios da calculadora">
+                    <article><span aria-hidden="true">⚡</span><div><strong>TMB</strong><p>Taxa Metabólica Basal calculada com precisão</p></div></article>
+                    <article><span aria-hidden="true">🍚</span><div><strong>Arroz</strong><p>Gramas ideais por refeição</p></div></article>
+                    <article><span aria-hidden="true">🫘</span><div><strong>Feijão</strong><p>Porção equilibrada de leguminosas</p></div></article>
+                    <article><span aria-hidden="true">🥩</span><div><strong>Proteína</strong><p>Quantidade adequada ao seu objetivo</p></div></article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <a class="rodape-marca" href="index.html" aria-label="Viva+ — início">
+                <img src="../img/modoescurologo.png" alt="Viva+">
+            </a>
+            <p>© 2026 Viva+ · Saúde, Esportes &amp; Nutrição em Caruaru</p>
+            <nav aria-label="Links do rodapé">
+                <a href="index.html">Início</a>
+                <a href="mapa.html">Mapa</a>
+                <a href="alimentacao.html">Alimentação</a>
+                <a href="sobre.html">Sobre</a>
+            </nav>
+        </div>
     </footer>
 
     <script src="../js/nav.js"></script>
