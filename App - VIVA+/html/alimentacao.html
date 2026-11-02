@@ -3,13 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentação</title>
-    <link rel="stylesheet" href="../css/nav.css">
+    <meta name="theme-color" content="#0f1016">
+    <title>VIVA+ | Nutrição & TMB</title>
+
+    <link rel="icon" type="image/png" href="../img/modoclarologo.png" sizes="32x32">
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/alimentacao.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 <body>
-    <div id="cabecalhonav"></div>
+  <div id="cabecalhonav"></div>
 
+  <main class="page">
+    <section class="intro">
+    <p class="eyebrow">NUTRIÇÃO</p>
+    <h1>Calculadora de Nutrição <span>&amp; TMB</span></h1>
+    <p class="intro-copy">Insira seus dados para estimar sua Taxa Metabólica Basal (TMB) e receber uma referência de necessidade energética diária baseada na equação de Harris-Benedict.</p>
+    </section>
+
+    <section class="calculator" aria-labelledby="form-title">
+    <h2 id="form-title" class="sr-only">Seus dados</h2>
+    <form id="nutritionForm">
+    <div class="field-grid">
+    <label>IDADE
+    <input id="age" type="number" min="18" max="120" placeholder="Ex.: 25" required>
+    </label>
+    <label>PESO (kg)
+    <input id="weight" type="number" min="1" max="400" step="0.1" placeholder="Ex.: 70" required>
+    </label>
+    <label>ALTURA (cm)
+    <input id="height" type="number" min="50" max="250" placeholder="Ex.: 175" required>
+    </label></div>
+
+    <fieldset>
+    <legend>SEXO BIOLÓGICO</legend>
+    <div class="sex-options">
+    <label class="choice"><input type="radio" name="sex" value="male" checked><span>♂ Masculino</span></label>
+    <label class="choice"><input type="radio" name="sex" value="female"><span>♀ Feminino</span></label></div></fieldset>
+
+    <fieldset>
+    <legend>NÍVEL DE ATIVIDADE FÍSICA</legend>
+    <div class="activity-list">
+    <label class="activity-option">
+    <input type="radio" name="activity" value="1.2">
+    <span class="activity-text"><strong>Sedentário</strong><small>Pouco ou nenhum exercício</small></span>
+    <span class="factor">×1,2</span></label>
+    <label class="activity-option">
+    <input type="radio" name="activity" value="1.375">
+    <span class="activity-text"><strong>Levemente ativo</strong><small>Atividade leve ocasional</small></span>
+    <span class="factor">×1,375</span></label>
+    <label class="activity-option selected">
+    <input type="radio" name="activity" value="1.55" checked>
+    <span class="activity-text"><strong>Moderadamente ativo</strong><small>Atividade física regular</small></span>
+    <span class="factor">×1,55</span>
+    </label>
+    <label class="activity-option">
+    <input type="radio" name="activity" value="1.725">
+    <span class="activity-text"><strong>Muito ativo</strong><small>Atividade intensa frequente</small></span>
+    <span class="factor">×1,725</span></label>
+    <label class="activity-option">
+    <input type="radio" name="activity" value="1.9">
+    <span class="activity-text"><strong>Extremamente ativo</strong><small>Rotina física muito intensa</small></span>
+    <span class="factor">×1,9</span></label></div></fieldset>
+
+    <button class="calculate-button" type="submit">Calcular <span aria-hidden="true">→</span></button>
+    <p class="form-error" id="formError" role="alert"></p></form>
+
+    <section class="result" id="result" aria-live="polite" hidden>
+    <div class="result-heading">
+    <span class="result-icon">✓</span><div>
+    <p class="eyebrow">ESTIMATIVA CONCLUÍDA</p>
+    <h2>Seu resultado</h2></div></div>
+
+    <div class="result-grid">
+    <article class="result-card">
+    <span>Taxa Metabólica Basal</span>
+    <strong id="tmbResult">—</strong>
+    <small>kcal/dia em repouso</small></article>
+    <article class="result-card highlight">
+    <span>Gasto energético estimado</span>
+    <strong id="dailyResult">—</strong>
+    <small>kcal/dia com atividade</small>
+    </article></div>
+
+    <p class="disclaimer">Esta calculadora fornece apenas uma estimativa educativa. Ela não substitui a avaliação individual de um nutricionista ou outro profissional de saúde.</p>
+    <button type="button" class="reset-button" id="resetButton">Atualizar dados</button>
+    </section></section></main>
+
+    <footer class="footer">
+        <img src="../img/modoescurologo.png" width="100" height="50" alt="Logo VIVA+" class="footer-logo">
+    </footer>
+
+    <script src="../js/alimentacao.js"></script>
     <script src="../js/nav.js"></script>
 </body>
 </html>
