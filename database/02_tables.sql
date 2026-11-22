@@ -1,0 +1,149 @@
+USE movi;
+-- CREATE TABLE ...
+
+CREATE TABLE USUARIO (
+    ID_Usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    nome_usuario VARCHAR(25) NOT NULL UNIQUE,
+    tipo_usuario ENUM('COMUM', 'VERIFICADO', 'ADM')
+        NOT NULL DEFAULT 'COMUM'
+        
+);
+
+CREATE TABLE PERFIL (
+	ID_Perfil INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT NOT NULL UNIQUE,
+    peso DECIMAL (5,2),
+    altura DECIMAL (4,2),
+    data_nascimento DATE,
+    genero VARCHAR(30),
+    
+    FOREIGN KEY (ID_Usuario)
+		REFERENCES USUARIO(ID_Usuario)
+        
+);
+
+CREATE TABLE META (
+	ID_Meta INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT NOT NULL, 
+    descricao VARCHAR(255) NOT NULL,
+    valor_objetivo DECIMAL (10,2) NOT NULL,
+    data_inicio DATE NOT NULL,
+    data_fim DATE,
+    status_meta VARCHAR(30),
+    
+    FOREIGN KEY (ID_Usuario)
+		REFERENCES USUARIO(ID_Usuario)
+        
+);
+        
+CREATE TABLE PONTUACAO (
+	ID_Pontuacao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT NOT NULL,
+    tipo_pontuacao VARCHAR(30) NOT NULL,
+    quantidade INT NOT NULL,
+    data_ganho DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (ID_Usuario)
+		REFERENCES USUARIO(ID_Usuario)
+        
+	);
+        
+CREATE TABLE CONQUISTA (
+	ID_Conquista INT AUTO_INCREMENT PRIMARY KEY,
+    nome_conquista VARCHAR(100) NOT NULL,
+    descricao VARCHAR(255) 
+    
+);
+
+CREATE TABLE USUARIO_CONQUISTA (
+	ID_Usuario INT NOT NULL,
+    ID_Conquista INT NOT NULL,
+    data_conquista DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+    PRIMARY KEY (ID_Usuario, ID_Conquista),
+		
+	FOREIGN KEY (ID_Usuario)
+        REFERENCES USUARIO(ID_Usuario),
+        
+	FOREIGN KEY (ID_Conquista)
+		REFERENCES CONQUISTA(ID_Conquista)
+        
+);
+
+CREATE TABLE ATIVIDADE (
+	ID_Atividade INT AUTO_INCREMENT PRIMARY KEY,
+    nome_atividade VARCHAR(100) NOT NULL,
+    descricao VARCHAR(255)
+    
+);
+
+CREATE TABLE REGISTRO_ATIVIDADES (
+	ID_Registro INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT NOT NULL,
+    ID_Atividade INT NOT NULL,
+    data_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    duracao_minuto INT NOT NULL,
+    calorias_queimadas DECIMAL(10,2),
+    
+    FOREIGN KEY (ID_Usuario)
+		REFERENCES USUARIO(ID_Usuario),
+        
+	FOREIGN KEY (ID_Atividade)
+		REFERENCES ATIVIDADE(ID_Atividade)
+);
+
+CREATE TABLE CATEGORIA_LOCAL (
+	ID_Categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nome_categoria VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE LOCAL_ (
+ID_Local INT AUTO_INCREMENT PRIMARY KEY,
+ID_Categoria INT NOT NULL,
+nome_local VARCHAR(100) NOT NULL,
+endereco VARCHAR(255),
+latitude DECIMAL(10,7),
+longitude DECIMAL(10,7),
+
+FOREIGN KEY (ID_Categoria)
+	REFERENCES CATEGORIA_LOCAL(ID_Categoria)
+);
+
+CREATE TABLE ALIMENTO (
+ID_Alimento INT AUTO_INCREMENT PRIMARY KEY,
+nome_alimento VARCHAR(100) NOT NULL,
+calorias DECIMAL(10,2) NOT NULL,
+porcao DECIMAL(10,2) NOT NULL
+
+);
+
+CREATE TABLE USUARIO_VISUALIZA_LOCAL (
+	ID_Visualizacao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT NOT NULL,
+    ID_Local INT NOT NULL,
+    data_visualizacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (ID_Usuario)
+		REFERENCES USUARIO(ID_Usuario),
+        
+	FOREIGN KEY (ID_Local)
+		REFERENCES LOCAL_(ID_Local)
+
+);
+
+CREATE TABLE USUARIO_CONSULTA_ALIMENTO (
+	ID_Consulta INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT NOT NULL,
+    ID_Alimento INT NOT NULL,
+    data_consulta DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (ID_Usuario)
+		REFERENCES USUARIO(ID_Usuario),
+        
+	FOREIGN KEY (ID_Alimento)
+		REFERENCES ALIMENTO(ID_Alimento)
+);

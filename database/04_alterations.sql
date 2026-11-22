@@ -1,0 +1,8 @@
+-- MOVI_BD
+-- 04_alterations.sql
+--
+-- Alterações históricas incorporadas ao 02_tables.sql.
+-- Nenhuma alteração pendente nesta versão.
+--
+-- Novas alterações deverão ser documentadas
+-- e testadas antes de serem aplicadas.
