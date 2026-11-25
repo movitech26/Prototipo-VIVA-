@@ -1,0 +1,187 @@
+.container-pesquisa {
+    display: flex;
+    border-bottom: 1px solid #173d78;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background-color: #0d1730;
+    flex-wrap: wrap;
+}
+
+/*css da barra de pesquisa*/
+
+.barra-de-pesquisa {
+    display: flex;
+    align-items: center;
+    background-color: #080f24;
+    border: 1px solid #173d78;
+    border-radius: 10px;
+    padding: 10px 16px;
+    width: 320px;
+}
+
+.barra-de-pesquisa .lupa {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.barra-de-pesquisa input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+}
+
+
+/*css dos botões*/
+
+.botoes-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+}
+
+.filtro {
+    background-color: #080f24;
+    color: #94a3b8;
+    border: 1px solid #173d78;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.15s;
+}
+
+.filtro.ativo {
+    background-color: #0875ee;
+    border:1px solid #0875ee;
+    color: white;
+    font-weight: 600;
+}
+
+
+.filtro:hover {
+    background-color: #173d78;
+    color: white;
+}
+
+/*CSS dos cards*/
+
+.cards-mapa {
+    display: flex;
+    gap: 20px;
+    padding: 20px 24px;
+    min-height: 70%;
+    align-items: flex-start;
+}
+
+.lista-de-locais {
+    width: 380px;
+    flex-shrink: 0;
+    max-height: 75%;        
+    overflow-y: auto;
+}
+
+.quantidade-de-locais {
+    color: #8a8f9a;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card /*css de uma div do js*/{
+    background-color: #101b36;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #173d78;
+    transition: 0.2s;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+/*informações do card*/
+.card-info {
+    padding: 12px 14px;
+}
+
+.card-titulo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.card-endereco {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #8a8f9a;
+}
+
+/*css do mapa*/
+.area-mapa {
+    flex: 1;
+    background-color: #0b1530;
+    border-radius: 12px;
+    border: 1px solid #173d78;
+    height: 75%;         
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapa-placeholder {
+    text-align: center;
+    color: #8a8f9a;
+}
+
+@media (max-width: 900px) {
+    .cards-mapa {
+        flex-direction: column;
+    }
+
+    .lista-de-locais {
+        width: 100%;
+    }
+
+    .area-mapa {
+        min-height: 300px;
+    }
+}
+/* Identidade visual VIVA+ — mapa */
+.container-pesquisa {
+    background: #0d1730;
+    border-color: #173d78;
+}
+.barra-de-pesquisa,
+.filtro,
+.card,
+.area-mapa {
+    border-color: #173d78;
+}
+.filtro.ativo {
+    background: linear-gradient(105deg, #08d5f2 0%, #0875ee 58%, #792cff 100%);
+    border-color: transparent;
+    color: #06122c;
+}
+.card:hover { border-color: #08ccef; }
+.area-mapa { background: #0a142c; }
