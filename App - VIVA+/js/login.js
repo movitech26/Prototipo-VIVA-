@@ -14,3 +14,13 @@ function toggleScreens(screen) {
 function toggleSport(button) {
     button.classList.toggle('selected');
 }
+
+const formularioLogin = document.querySelector('#login-screen form');
+
+formularioLogin.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    sessionStorage.setItem('acessoLiberado', 'sim');
+
+    window.location.replace('index.html');
+})

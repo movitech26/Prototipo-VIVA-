@@ -49,6 +49,10 @@ const locais = [
     }
 ]
 
+const campoPesquisa = document.getElementById("campo-da-pesquisa");
+
+let categoriaAtual = "Todos";
+
 function mostrarcards (categoria) {
     const container = document.getElementById("lista-de-cards");
     const textoQuantidade = document.querySelector(".quantidade-de-locais");
@@ -59,6 +63,14 @@ function mostrarcards (categoria) {
     } else {
         filtrados = locais.filter(local => local.categoria === categoria)
     }
+
+    const pesquisa = campoPesquisa.value.toLowerCase().trim();
+
+    filtrados = filtrados.filter(local => 
+        local.nome.toLowerCase().includes(pesquisa) ||
+        local.endereco.toLowerCase().includes(pesquisa) ||
+        local.categoria.toLowerCase().includes(pesquisa)
+    );
 
     textoQuantidade.textContent = `${filtrados.length} locais encontrados`;
 
@@ -95,9 +107,12 @@ const botoes = document.querySelectorAll (".filtro")
             })
             botao.classList.add("ativo")
 
-            const categoria = botao.textContent.trim();
-            mostrarcards(categoria);
+            categoriaAtual = botao.textContent.trim();
+            mostrarcards(categoriaAtual);
         })
     })
 
+campoPesquisa.addEventListener("input", () => {
+    mostrarcards(categoriaAtual);
+})
 mostrarcards('Todos');
