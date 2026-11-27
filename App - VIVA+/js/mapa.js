@@ -2,6 +2,7 @@ const locais = [
     {
         id: 1,
         nome: "Ciclovia - Via parque",
+        endereco: "Endereço a cadastrar",
         categoria: "Ciclovia",
         imagem: "depois vou incluir",
         icone:"🚴"
@@ -10,7 +11,7 @@ const locais = [
         id: 2,
         nome: "Ciclovia — Açude de Tabocas",
         endereco: "Entorno do Açude Tabocas, Caruaru-PE",
-        categoria: "Ciclovias",
+        categoria: "Ciclovia",
         imagem: "depois vou incluir",
         icone: "🚴"
     },
@@ -70,7 +71,7 @@ function mostrarcards (categoria) {
         card.innerHTML = `
             <img src="${local.imagem}" alt="${local.nome}">
             <div class="card-info">
-                <div class="card-info">
+                <div class="card-titulo">
                     <span>${local.icone}</span>
                     <span>${local.nome}</span>
                 </div>
