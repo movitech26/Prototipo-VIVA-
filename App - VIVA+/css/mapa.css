@@ -58,10 +58,10 @@
 }
 
 .filtro.ativo {
-    background-color: #0875ee;
     border:1px solid #0875ee;
     color: white;
     font-weight: 600;
+    background: linear-gradient(105deg, #08d5f2 0%, #0875ee 58%, #792cff 100%);
 }
 
 
@@ -142,8 +142,9 @@
     background-color: #0b1530;
     border-radius: 12px;
     border: 1px solid #173d78;
-    height: 75%;         
+    height: 70vh;
     position: sticky;
+    top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,21 +168,4 @@
         min-height: 300px;
     }
 }
-/* Identidade visual VIVA+ — mapa */
-.container-pesquisa {
-    background: #0d1730;
-    border-color: #173d78;
-}
-.barra-de-pesquisa,
-.filtro,
-.card,
-.area-mapa {
-    border-color: #173d78;
-}
-.filtro.ativo {
-    background: linear-gradient(105deg, #08d5f2 0%, #0875ee 58%, #792cff 100%);
-    border-color: transparent;
-    color: #06122c;
-}
-.card:hover { border-color: #08ccef; }
-.area-mapa { background: #0a142c; }
+
